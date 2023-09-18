@@ -1,6 +1,6 @@
 # Code and data used for the CONVERSE paper
 
-CONVERSE stands for **con**tinuous **ve**rtical **se**questration, which refers to a new carbon sequestration approach where it is assumed that sequestration for >= 100 years can occur at any depth in the water column. In this repository, you will find all the codes and data used in the associated paper published in Nature Geoscience.
+CONVERSE stands for **con**tinuous **ve**rtical **se**questration, which refers to a new carbon sequestration approach where it is assumed that carbon sequestration (for >= 100 years) flux can occur at all depths in the water column. In this repository, you will find all the codes and data used in the associated paper published in Nature Geoscience.
 
 ## Main code (and data used in input)
 
@@ -10,7 +10,7 @@ CONVERSE stands for **con**tinuous **ve**rtical **se**questration, which refers 
   - **F100.mat**: file containing the f100 (i.e. fraction of retained biogenic carbon after 100 years) computed by Siegel et al., (2021).
  
 - **02_compute_Fsedim**: Script used to compute the POC flux in the sediment based on Hayes et al., (2021).
-  - **TOCConc1degR** and **F_TOCMapR3**: NetCDF files containing metadata (latitude/longitude) and the flux of POC in the sediment.
+  - **TOCConc1degR.nc** and **F_TOCMapR3.nc**: NetCDF files containing metadata (latitude/longitude) and the flux of POC in the sediment.
   - **marmap_coord_-180;-90;180;90_res_60.csv**: csv file containing the bathymetry (grid resolution of 60 minutes) from the NOAA (see also https://www.ncei.noaa.gov/products/bathymetry). NOTE: to get this data, you need to run the script **03_get_bathy_from_NOAA.R**.
  
 - **03_get_bathy_from_NOAA**: See 02_compute_Fsedim but basically, it just fetches bathymetry data from NOAA server.
@@ -20,5 +20,8 @@ CONVERSE stands for **con**tinuous **ve**rtical **se**questration, which refers 
 - **05_get_results**: This is the main code that interests you ! All Tables and Figures in the paper are based on this code. Briefly, it describes the different steps to compute continuous carbon sequestration fluxes for the multiple components of the biological carbon pump (i.e. gravitational pump, physically-mediated injection pump and biological-mediated injection pump also referred to the daily and seasonal migration pumps). In this part, we compute this for the 7th version of CONVERSE.
   - **expHensonmod.mat**: see above.
   - **Figure4mats.mat**: file containing the primary production illustrated in Figure 4a of Henson et al., (2012).
+  - **SIMPLE_TRIM_output_CORRECTED.nc**: NetCDF file containing data from the paper of Devries and Weber (2017). Data available [here](https://tdevries.eri.ucsb.edu/models-and-data-products/) under 'SIMPLE-TRIM output' (~400 MB). NOTE: in case of error (e.g. HDF error when reading the NetCDF file either with Python or with `ncdump` in your terminal, type `HDF5_USE_FILE_LOCKING=FALSE` in your terminal and run the script again.
 
 ## Figures
+
+Data used for figures (2, 4, 5 and ED1-4) are available in `data/output_data_for_figures`. Scripts to create those figures are available in `create_figures`.
