@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/469748694.svg)](https://zenodo.org/badge/latestdoi/469748694)
+
 # Code and data used for the CONVERSE paper
 
 CONVERSE stands for **con**tinuous **ve**rtical **se**questration, which refers to a new carbon sequestration approach where it is assumed that carbon sequestration (for >= 100 years) flux can occur at all depths in the water column. In this repository, you will find all the codes and data used in the associated paper published in Nature Geoscience.
